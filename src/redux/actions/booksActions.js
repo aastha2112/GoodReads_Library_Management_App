@@ -19,11 +19,11 @@ export const fetchBooks = () => async (dispatch) => {
 
     let res = await axios.get(`${baseUrl}/books.json`);
     console.log(res.data, "response");
-    const booksArr = Object.keys(res.data).map((key) => ({
-      id: key,
-      ...res.data[key],
-    }));
-    dispatch({ type: FETCH_BOOKS_SUCCESS, payload: booksArr });
+    // const booksArr = Object.keys(res.data).map((key) => ({
+    //   id: key,
+    //   ...res.data[key],
+    // }));
+    dispatch({ type: FETCH_BOOKS_SUCCESS, payload: res.data });
   } catch (error) {
     dispatch({ type: FETCH_BOOKS_FAILURE });
     console.log("error fetching books", error);

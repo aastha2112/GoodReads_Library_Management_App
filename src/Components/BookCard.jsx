@@ -1,11 +1,14 @@
-import { Flex } from "@chakra-ui/react";
+import { Button, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 
 const BookCard = ({ book }) => {
   return (
-    <Flex>
+    <VStack>
       <img src={book.coverImage} alt={book.title} />
-    </Flex>
+      <Heading>{book.title}</Heading>
+      <Text>{book.author}</Text>
+      <Button>Want to read</Button>
+    </VStack>
   );
 };
 
